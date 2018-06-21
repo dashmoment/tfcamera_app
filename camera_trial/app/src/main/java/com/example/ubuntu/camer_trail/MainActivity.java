@@ -2,7 +2,9 @@ package com.example.ubuntu.camer_trail;
 
 import java.io.IOException;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.hardware.Camera;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.graphics.SurfaceTexture;
 import android.util.Log;
@@ -63,6 +65,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener {
                 rotation += -90.0f;
             }
         });
+
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        Log.i("pref", mPrefs.getString("uri", null).toString());
+
 
 
 
